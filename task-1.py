@@ -24,7 +24,7 @@ if connectionType == "1":
     runningConfig = session.send_command("show running-config")
     saveConfig = input("Do you want to save the running config? (Y/N)")
     if saveConfig == "Y":
-        file = open("running-config.txt", "w+")
+        file = open("running-config-" + connectionInfo["host"] + ".txt", "w+")
         file.write(runningConfig)
         print("+ Configuration saved to file!")
     session.close()
